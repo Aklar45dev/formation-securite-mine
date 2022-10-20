@@ -1,38 +1,520 @@
-.App {
+html{
+  background-color: black;
+}
+
+.img-ans{
+  width: 50%;
+  filter: brightness(3);
+}
+
+.App{
+  height:max-content;
+  display: block;
+}
+
+.debug{
+  display: block;
+}
+
+#accueil {
+  display: none;
+
+}
+
+#outro {
+  z-index: 1001;
+  height: 100%;
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+#intro {
+  z-index: 1000;
+  position: absolute;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.check{
+  width: 60px;
+  position: absolute;
+  filter: brightness(3);
+  display: none;
+  margin: 0.5em;
+  margin-top: 0em;
+}
+
+.intro-text{
+  color: white;
+  font-size: 1.5em;
+  width: 50%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.outro-text{
+  color: white;
+  width: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.out-text {
+  font-size: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-weight: 700;
+  color: orangered;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.outro-text .point{
+  color: white;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.accueil-bg {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.35;
+}
+
+.resetBtnContainers{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.title-font{
+  color: white;
+  font-size: 5em;
+  text-align: center;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  margin-top: 0;
+}
+
+.btn-container{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  flex-direction: column;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 5em;
+  margin-bottom: 3em;
+}
+
+.btn{
+  background-color: Transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn:hover{
+  opacity: 0.7;
+}
+
+.btn-pic{
+  width: 100%;
+  border-radius: 1em;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin: 0em;
+}
+
+.btn-title{
+  color: rgb(210, 210, 210);
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+}
+
+.btn-subtitle{
+  color: rgb(210, 210, 210);
+  text-justify: center;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.25em;
+}
+
+.card{
+  background-color:rgb(17, 17, 17);
+  border-radius: 1em;
+  margin: 1em;
+}
+
+#video{
+  display: none;
+  background-color: rgb(0, 0, 0);
+}
+
+#video video{
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.res-container {
+ display: flex;
+ flex-direction: row;
+ margin-top: 5em;
+ width: 60%;
+ align-items: flex-start;
+ padding: 4em;
+ background-color: rgb(17, 17, 17);
+ border-radius: 1em;
+
+}
+
+.video-retro-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#response{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+#response video{
+  width: 100%;
+}
+
+.info{
+  width: 100%;
+  margin-right: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.para{
+  margin-right: 2em;
+  padding: 0.5em;
   color: white;
+  width: 100%;
+  font-weight: 700;
+  font-size: 1.5em;
 }
 
-.App-link {
-  color: #61dafb;
+.key-el{
+  align-content: center;
+  margin-top: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.para-list{
+  color: white;
+  width: 100%;
+  font-weight: 100;
+  font-size: 1.5em;
+}
+
+.main-title{
+  font-size: 3em;
+  text-align: center;
+  color:white;
+  margin-bottom: 2em;
+  margin-top: 0;
+  padding-top: 2em;
+  font-weight: 700;
+}
+
+.select-title{
+  font-size: 3em;
+  text-align: center;
+  color:white;
+  margin-bottom: 2em;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.info-title{
+  font-size: 3em;
+  text-align: center;
+  color:white;
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+
+.retro-subtitle{
+  font-size: 2.5em;
+  text-align: center;
+  color: orangered;
+  margin-top: 0em;
+  margin-bottom: 0.25em;
+  font-weight: 700;
+}
+
+.retro-subtitle-green{
+  font-size: 2.5em;
+  text-align: center;
+  color: rgb(13, 255, 0);
+  margin-top: 0em;
+  margin-bottom: 0.25em;
+  font-weight: 700;
+}
+
+.selectBtn{
+  width: 100%;
+  font-size: 1.25em;
+  color: white;
+  background-color:orangered;
+  border-radius: 0.5em;
+  height:120px;
+  cursor: pointer;
+  border: 0;
+  margin-bottom: 0.5em;
+  padding: 1em;
+  align-self: center;
+  pointer-events: none;
+}
+
+.selectBtn:hover{
+  opacity: 0.7;
+}
+
+#selector{
+  overflow: hidden;
+  width: 50%;
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  background-color: #000;
+  padding-top: 5%;
+  height: 100%;
+  left: 0;
+  padding-right: 25%;
+  padding-left: 25%;
+}
+
+.retour{
+  align-self: center;
+  border-radius: 1em;
+  padding: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 1.25em;
+  font-weight: 400;
+  margin: 1em;
+  margin-top: 2em;
+  cursor: pointer;
+  color: rgb(17, 17, 17);
+  border: 0;
+  display: none;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #aaa;
+}
+
+.retour:hover {
+  opacity: 0.7;
+}
+
+.start-btn{
+  align-self: center;
+  border-radius: 1em;
+  padding: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 1.25em;
+  font-weight: 400;
+  margin: 1em;
+  margin-top: 4em;
+  cursor: pointer;
+  color: rgb(17, 17, 17);
+  border: 0;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #aaa;
+}
+
+.start-btn:hover {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .btn-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .info{
+    width: 100%;
+    margin-right: 0em;
   }
+
+  .App{
+    background-color: #000;
+    height:max-content;
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .btn{
+    padding: 0;
+  }
+
+  .btn-title{
+    color: rgb(210, 210, 210);
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .btn-subtitle{
+    color: rgb(210, 210, 210);
+    text-justify: center;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 1.25em;
+  }
+
+  .selectBtn{
+    width: 100%;
+    font-size: 1em;
+    color: white;
+    background-color:orangered;
+    border-radius: 0.5em;
+    height: auto;
+    cursor: pointer;
+    border: 0;
+    margin-bottom: 0.5em;
+    padding: 1em;
+    align-self: center;
+  }
+
+  .res-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    padding: 1em;
+    border-radius: 0;
+    width: auto;
+   }
+
+   #response{
+    background-color: rgb(26, 26, 26);
+  }
+
+   #response video{
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  .info-title{
+    font-size: 2em;
+    text-align: center;
+    color:white;
+    margin-top: 0em;
+    margin-bottom: 0.25em;
+    font-weight: 700;
+  }
+
+  .para{
+    width: auto;
+    margin-right: 0;
+  }
+
+  .retour{
+    margin: 0.25em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .title-font{
+    margin-bottom: 1em;
+    font-size: 3em;
+  }
+
+  .select-title{
+    font-size: 2em;
+    text-align: center;
+    color:white;
+    margin: 0.25em;
+
+    margin-bottom: 1.5em;
+    font-weight: 700;
+  }
+
+  .card{
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 2em;
+    
+  }
+
+  #selector{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    background-color: #000;
+    height: 100%;
+    left: 0;
+    padding: 0;
+    padding-top: 10%;
+  }
+
+  .accueil-bg {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.35;
+    background-color: red;
+  }
+
+  #accueil {
+    background-color: #000;
+    margin-top: 3em
+  }
+
+  #video video{
+    height: auto;
+  }
+
+  .intro-text{
+    width: 95%;
+    font-size: 1em;
+  }
+
+  .outro-text{
+    width: 95%;
+  }
+
+  .out-text{
+    font-size: 1em;
+  }
+
+  .outro-text .point {
+    font-size: 1em;
+  }
+
+  .main-title{
+    font-size: 1.5em;
+    padding-top: 1em;
+  }
+
 }
