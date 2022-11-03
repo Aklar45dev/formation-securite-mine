@@ -7,6 +7,11 @@ html{
   filter: brightness(3);
 }
 
+.blur{
+  filter: blur(6px);
+  pointer-events: none;
+}
+
 .App{
   height:max-content;
   display: block;
