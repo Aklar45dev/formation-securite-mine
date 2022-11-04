@@ -23,7 +23,7 @@ $(() => {
   const [retroid, setRetroid] = useState('4')
   const [audioAns, setAudioAns] = useState('')
   const [canPlayAns, setCanPlayAns] = useState(false)
-  const [blured, setBlured] = useState([0,0])
+  const [blured, setBlured] = useState([0,0,0])
 
   useEffect(() => {
     if(url !== null){
@@ -39,15 +39,27 @@ $(() => {
   }, [audioAns])
 
   useEffect(() => {
-    $("#card2").removeClass("blur");
-    $("#card3").removeClass("blur");
+    $("#card2").removeClass("blur")
+    $("#card3").removeClass("blur")
     if(blured[0] === 0) 
     {
-      $("#card2").addClass("blur");
+      $("#card2").addClass("blur")
     }
     if(blured[1] === 0) 
     {
-      $("#card3").addClass("blur");
+      $("#card3").addClass("blur")
+    }
+    if(blured[0] === 1) 
+    {
+      $("#check1").css({display: "block"})
+    }
+    if(blured[1] === 1) 
+    {
+      $("#check2").css({display: "block"})
+    }
+    if(blured[2] === 1) 
+    {
+      $("#check3").css({display: "block"})
     }
   }, [blured])
 
@@ -118,11 +130,14 @@ $(() => {
       $("#accueil").css({display: "block"})
     }
     if (id === 0){
-    setBlured([1,0])
+    setBlured([1,0,0])
     }
     if (id === 1){
-      setBlured([1,1])
-      }
+      setBlured([1,1,0])
+    }
+    if (id === 2){
+      setBlured([1,1,1])
+    }
   }
 
   const showBtn = () => {
